@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de Obras - Sigelu Clone (Supabase)</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Link para o arquivo CSS externo -->
+    <link rel="stylesheet" href="./style.css">
+    
+    <!-- Supabase CDN - Carregado primeiro para garantir disponibilidade -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <script>
+        // Variáveis para Supabase URL e Anon Key
+        // Elas serão acessadas diretamente no script.js pelo componente React
+        window.supabaseUrl = 'https://crlbcipzpjrsqvyknhds.supabase.co'; // Sua URL do projeto Supabase
+        window.supabaseAnonKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNybGJjaXB6cGpyc3F2eWtuaGRzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDg4NjM1MzIsImV4cCI6MjA2NDQzOTUzMn0.Z1lET_3ugvFXx3yxDOETUa3y5Heyf9-f9OFPY5wKTkQ'; // Sua Anon Key do projeto Supabase
+        
+        // Inicializa o cliente Supabase imediatamente após o carregamento da CDN do Supabase
+        // O objeto 'Supabase' deve estar disponível globalmente aqui.
+        window.supabase = Supabase.createClient(supabaseUrl, supabaseAnonKey);
+        console.log("Supabase client initialized globally as window.supabase.");
+    </script>
+</head>
+<body class="min-h-screen flex items-center justify-center p-4">
+    <div id="root" class="w-full max-w-4xl bg-white rounded-lg shadow-xl overflow-hidden">
+        <!-- React app will be mounted here -->
+        <div class="flex items-center justify-center h-64 bg-gray-100 text-gray-500">
+            Carregando aplicação...
+        </div>
+    </div>
+
+    <!-- React and ReactDOM CDNs -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <!-- Babel for JSX transformation in browser (for development, not production) -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <!-- Link para o arquivo JavaScript externo (com type="text/babel" para JSX) -->
+    <script type="text/babel" src="./script.js"></script>
+</body>
+</html>
