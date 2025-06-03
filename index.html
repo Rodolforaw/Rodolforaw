@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Aplicação Trello Clone Avançada"
+    />
+    <title>App Hub - Trello Pro</title>
+    <!-- Inclui o Tailwind CSS (CDN) e o seu CSS personalizado -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Inclui as bibliotecas React e ReactDOM (CDN) -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <!-- Inclui as bibliotecas Firebase (CDN) -->
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+      import { getAuth, signInAnonymously, signInWithCustomToken, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+      import { getFirestore, doc, getDoc, addDoc, setDoc, updateDoc, deleteDoc, onSnapshot, collection, query, where, orderBy, serverTimestamp as fbServerTimestamp, getDocs, writeBatch } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js"; // Alias serverTimestamp
+
+      // Variáveis globais fornecidas pelo ambiente Canvas
+      window.appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
+      window.firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : {};
+      window.initialAuthToken = typeof __initial_auth_token !== 'undefined' ? __initial_auth_token : null;
+
+      // Inicializa o Firebase e exporta para o script.js
+      window.firebaseApp = initializeApp(window.firebaseConfig);
+      window.db = getFirestore(window.firebaseApp);
+      window.auth = getAuth(window.firebaseApp);
+      window.firebaseFirestoreFunctions = { // Expose specific functions
+        doc: doc,
+        getDoc: getDoc,
+        addDoc: addDoc,
+        updateDoc: updateDoc,
+        deleteDoc: deleteDoc,
+        onSnapshot: onSnapshot,
+        collection: collection,
+        query: query,
+        orderBy: orderBy,
+        serverTimestamp: fbServerTimestamp, // Use the aliased serverTimestamp
+        getDocs: getDocs,
+        writeBatch: writeBatch
+      };
+    </script>
+  </head>
+  <body>
+    <noscript>Precisa de ativar o JavaScript para executar esta aplicação.</noscript>
+    <div id="root"></div>
+    <!-- O seu código JavaScript principal -->
+    <script src="script.js"></script>
+  </body>
+</html>
