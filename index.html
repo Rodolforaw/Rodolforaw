@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Construboard - Sistema de Gestão de Obras</title>
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     crossorigin=""/>
+    <!-- Leaflet.draw CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.css"
+     xintegrity="sha512-gc3xjSVDqsNKNGlv Mélr3PFLLIQPUmAiaKqzyropAGnGJUPajwBrysZmgqsNQSgTzJjLoAiOtgGigKYjscAL/Q=="
+     crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Link para o seu ficheiro CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Container para o formulário de login (controlado pelo React) -->
+    <div id="loginContainerRoot">
+        <!-- O formulário de login será renderizado aqui pelo script.js se o utilizador não estiver logado -->
+    </div>
+
+    <!-- Container principal da aplicação após o login (onde o React montará o dashboard) -->
+    <div id="dashboardRoot" style="display: none;">
+        <!-- O dashboard principal (TrelloCloneAppLayout) será renderizado aqui pelo script.js -->
+    </div>
+    
+    <!-- Área para notificações globais -->
+    <div id="notificationAreaRoot" class="notification-area"></div>
+
+    <!-- Leaflet JS (Make sure to put this AFTER Leaflet's CSS) -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+     crossorigin=""></script>
+    <!-- Leaflet.draw JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.js"
+     xintegrity="sha512-ozq8xQKq6urvuU6jNgkfqAmT7jNS3go+Hw39xH7GgL2UDERkS5kF_L3T_iS/CgDkM70Z4YpX5vFv0v878D1tQ=="
+     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+    <!-- Link para o seu ficheiro JavaScript (React) -->
+    <!-- IMPORTANTE: type="module" é essencial para as importações ES no script.js -->
+    <script type="module" src="script.js"></script>
+</body>
+</html>
